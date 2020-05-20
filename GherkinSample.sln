@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{680D88B5-7341-4E24-8E91-885F8255018A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BA96B399-D464-4E19-B946-03B942A7D6AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gate", "Gate", "{6C726AFF-44C0-4AFD-BA75-A9C22EEAE950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{C3FB4B20-7744-4D17-95CE-6316CCB1E435}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract", "Contract", "{8CD1CD5F-37E3-4840-B835-69B0D6C314FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.LabAPI", "src\Contract\LabAPI\Gherkin.Contract.LabAPI.csproj", "{33A37D32-5DAC-4389-BC97-6C44E06CCA1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.OrderCheckingAPI", "src\Contract\OrderCheckingAPI\Gherkin.Contract.OrderCheckingAPI.csproj", "{62D663A4-4814-42EA-AC5D-8F9301FC0E52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Neutral", "src\BuildingBlocks\Neutral\Gherkin.BuildingBlocks.Neutral.csproj", "{80B77188-8ACC-4BD1-B252-862864B6146A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Technical", "src\BuildingBlocks\Technical\Gherkin.BuildingBlocks.Technical.csproj", "{EFC99476-0FCC-4DDE-A719-2D56724076CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Core.LabAPI", "src\Core\LabAPI\Gherkin.Core.LabAPI.csproj", "{1C9F945D-06D8-42CB-850F-27B22FE615E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Core.OrderCheckingAPI", "src\Core\OrderCheckingAPI\Gherkin.Core.OrderCheckingAPI.csproj", "{CCF412D3-2C40-4809-B879-EE0E6042D6A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Testing", "src\Testing\Gherkin.Testing.csproj", "{F0E31601-5E4C-4B99-8EF8-B97F415350A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33A37D32-5DAC-4389-BC97-6C44E06CCA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A37D32-5DAC-4389-BC97-6C44E06CCA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A37D32-5DAC-4389-BC97-6C44E06CCA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A37D32-5DAC-4389-BC97-6C44E06CCA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D663A4-4814-42EA-AC5D-8F9301FC0E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D663A4-4814-42EA-AC5D-8F9301FC0E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D663A4-4814-42EA-AC5D-8F9301FC0E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D663A4-4814-42EA-AC5D-8F9301FC0E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B77188-8ACC-4BD1-B252-862864B6146A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B77188-8ACC-4BD1-B252-862864B6146A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B77188-8ACC-4BD1-B252-862864B6146A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B77188-8ACC-4BD1-B252-862864B6146A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC99476-0FCC-4DDE-A719-2D56724076CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC99476-0FCC-4DDE-A719-2D56724076CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC99476-0FCC-4DDE-A719-2D56724076CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC99476-0FCC-4DDE-A719-2D56724076CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9F945D-06D8-42CB-850F-27B22FE615E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9F945D-06D8-42CB-850F-27B22FE615E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9F945D-06D8-42CB-850F-27B22FE615E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9F945D-06D8-42CB-850F-27B22FE615E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF412D3-2C40-4809-B879-EE0E6042D6A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF412D3-2C40-4809-B879-EE0E6042D6A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF412D3-2C40-4809-B879-EE0E6042D6A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF412D3-2C40-4809-B879-EE0E6042D6A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E31601-5E4C-4B99-8EF8-B97F415350A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E31601-5E4C-4B99-8EF8-B97F415350A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E31601-5E4C-4B99-8EF8-B97F415350A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E31601-5E4C-4B99-8EF8-B97F415350A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{33A37D32-5DAC-4389-BC97-6C44E06CCA1F} = {8CD1CD5F-37E3-4840-B835-69B0D6C314FD}
+		{62D663A4-4814-42EA-AC5D-8F9301FC0E52} = {8CD1CD5F-37E3-4840-B835-69B0D6C314FD}
+		{80B77188-8ACC-4BD1-B252-862864B6146A} = {680D88B5-7341-4E24-8E91-885F8255018A}
+		{EFC99476-0FCC-4DDE-A719-2D56724076CA} = {680D88B5-7341-4E24-8E91-885F8255018A}
+		{1C9F945D-06D8-42CB-850F-27B22FE615E0} = {BA96B399-D464-4E19-B946-03B942A7D6AF}
+		{CCF412D3-2C40-4809-B879-EE0E6042D6A5} = {BA96B399-D464-4E19-B946-03B942A7D6AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC68AFB8-76F9-46C1-8D90-FC0A4AFCDE51}
+	EndGlobalSection
+EndGlobal
