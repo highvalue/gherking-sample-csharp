@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Gherkin.BuildingBlocks.Neutral.OptionPattern
+namespace Gherkin.BuildingBlocks.Utils.OptionPattern
 {
     public abstract class Option<T>
     {

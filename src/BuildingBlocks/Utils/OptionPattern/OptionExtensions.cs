@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Gherkin.BuildingBlocks.Neutral.OptionPattern
+namespace Gherkin.BuildingBlocks.Utils.OptionPattern
 {
    public static class OptionExtensions
     {

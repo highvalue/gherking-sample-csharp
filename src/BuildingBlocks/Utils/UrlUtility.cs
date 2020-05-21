@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Gherkin.BuildingBlocks.Neutral
+namespace Gherkin.BuildingBlocks.Utils
 {
 	// inspiration: https://stackoverflow.com/a/33465715
 

@@ -60,8 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BuildingBlocks\Neutral\Gherkin.BuildingBlocks.Neutral.csproj" />
-    <ProjectReference Include="..\BuildingBlocks\Technical\Gherkin.BuildingBlocks.Technical.csproj" />
+    <ProjectReference Include="..\BuildingBlocks\Utils\Gherkin.BuildingBlocks.Utils.csproj" />
     <ProjectReference Include="..\Contract\LabAPI\Gherkin.Contract.LabAPI.csproj" />
     <ProjectReference Include="..\Contract\OrderCheckingAPI\Gherkin.Contract.OrderCheckingAPI.csproj" />
     <ProjectReference Include="..\Core\LabAPI\Gherkin.Core.LabAPI.csproj" />

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BuildingBlocks\Technical\Gherkin.BuildingBlocks.Technical.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Tech\Gherkin.BuildingBlocks.Tech.csproj" />
     <ProjectReference Include="..\..\Contract\LabAPI\Gherkin.Contract.LabAPI.csproj" />
     <ProjectReference Include="..\..\Contract\OrderCheckingAPI\Gherkin.Contract.OrderCheckingAPI.csproj" />
   </ItemGroup>

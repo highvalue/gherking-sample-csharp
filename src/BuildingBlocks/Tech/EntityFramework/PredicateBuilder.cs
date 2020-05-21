@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Gherkin.BuildingBlocks.Technical.EntityFramework
+namespace Gherkin.BuildingBlocks.Tech.EntityFramework
 {
     // source:
     // http://www.albahari.com/nutshell/predicatebuilder.aspx

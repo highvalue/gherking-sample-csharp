@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Gherkin.BuildingBlocks.Technical.Http
+namespace Gherkin.BuildingBlocks.Tech.Http
 {
     public abstract class HttpClientBase
     {

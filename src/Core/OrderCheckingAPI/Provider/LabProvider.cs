@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Gherkin.Contract.LabAPI;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Gherkin.BuildingBlocks.Technical.Http;
-using Gherkin.Contract.LabAPI;
-using Microsoft.Extensions.Logging;
+using Gherkin.BuildingBlocks.Tech.Http;
 
 namespace Gherkin.Core.OrderCheckingAPI.Provider
 {

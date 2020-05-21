@@ -1,4 +1,4 @@
-﻿namespace Gherkin.BuildingBlocks.Neutral
+﻿namespace Gherkin.BuildingBlocks.Utils
 {
    public static class StringExtensions
     {
