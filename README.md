@@ -54,3 +54,8 @@ source:
 * software universe - business features first, technical aspects second (do not get side-tracked by technical forces too fast)
 
 ![](doc/images/retail03.png)
+
+### other components
+* SalesCycleTracker
+* CustomerNotifier
+* PaymentProcessor
