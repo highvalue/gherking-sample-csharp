@@ -156,15 +156,7 @@ namespace Gherkin.Testing.Factory.Base
                         }
                     }
                   );
-                }
-
-                if (!string.IsNullOrWhiteSpace(AppSettingsTestProject))
-                {
-                    builder.ConfigureAppConfiguration((context, conf) =>
-                    {
-                        conf.AddJsonFile(AppSettingsTestProject);
-                    });
-                }
+                }           
 
                 //add testservices
                 builder.ConfigureTestServices(collection =>

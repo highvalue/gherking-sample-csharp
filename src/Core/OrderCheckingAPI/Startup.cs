@@ -2,6 +2,7 @@ using Gherkin.Core.OrderCheckingAPI.Core;
 using Gherkin.Core.OrderCheckingAPI.Provider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,14 +21,16 @@ namespace Gherkin.Core.OrderCheckingAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers();          
             services.AddScoped<IOrderCheckingService, OrderCheckingService>();
             services.AddScoped<IOrderCheckingRepo, OrderCheckingEfCoreRepo>();
-            //services.AddScoped<ILabProvider, LabProvider>();
-            // services.AddDbContext<OrderCheckingContext>(op =>
-            //{
-            //    op.UseSqlServer(Configuration.GetValue<string>("MSSql:ConnectionString"));
-            //});
+            services.AddHttpClient<ILabProvider, LabProvider>();
+
+            // we replace this DbContext in tests with an inmemory implementation
+            services.AddDbContext<OrderCheckingContext>(op =>
+            {
+                op.UseSqlServer(Configuration.GetValue<string>("MSSql:ConnectionString"));
+            });
 
         }
 
