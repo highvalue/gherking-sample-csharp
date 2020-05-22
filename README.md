@@ -37,15 +37,15 @@ source:
 ## Testing and Architecture
 
 ### features
-* time travel
-* notifications (async)
-* mock service
-* mock provider
-* in-memory service
+* [x] mock service
+* [x] mock provider
+* [x] in-memory service
+* [ ] time travel
+* [ ] notifications (async)
 
 ### testing mode
-* gherkin tests
-* manual tests (selenium) - @SomeDayMaybe
+* [x] gherkin tests
+* [ ] manual tests (selenium) - @SomeDayMaybe
 
 ### architecture & methods
 * acceptance tests best practices
