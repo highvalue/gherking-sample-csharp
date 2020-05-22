@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Gherkin.BuildingBlocks.Utils.Time
+namespace Gherkin.BuildingBlocks.Tech.Time
 {
     public class TimeServer : ITimeServer
     {

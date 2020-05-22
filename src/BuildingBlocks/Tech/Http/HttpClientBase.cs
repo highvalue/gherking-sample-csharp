@@ -81,28 +81,7 @@ namespace Gherkin.BuildingBlocks.Tech.Http
         {
             var response = await Client.PutAsync(requestUrl, SerializeContent(model));
             EnsureResponseSuccess(response);
-        }
-
-        //protected async Task<U> PatchAsync<U, X>(string requestUrl, X model)
-        //{
-        //    var response = await Client.PatchAsync(requestUrl, SerializeContent(model));
-        //    EnsureResponseSuccess(response);
-        //    return await response.Content.ReadAsAsync<U>();
-        //}
-
-        //protected async Task<U> PatchAsync<U>(string requestUrl)
-        //{
-        //    var response = await Client.PatchAsync(requestUrl, new StringContent(string.Empty));
-        //    EnsureResponseSuccess(response);
-        //    return await response.Content.ReadAsAsync<U>();
-        //}
-
-        //protected async Task<string> PatchAndReadAsStringAsync(string requestUrl)
-        //{
-        //    var response = await Client.PatchAsync(requestUrl, new StringContent(string.Empty));
-        //    EnsureResponseSuccess(response);
-        //    return await response.Content.ReadAsStringAsync();
-        //}
+        }     
 
         protected virtual void EnsureResponseSuccess(HttpResponseMessage response)
         {

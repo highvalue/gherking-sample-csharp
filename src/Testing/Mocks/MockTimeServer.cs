@@ -1,5 +1,5 @@
 ﻿using System;
-using Gherkin.BuildingBlocks.Utils.Time;
+using Gherkin.BuildingBlocks.Tech.Time;
 
 namespace Gherkin.Testing.Mocks
 {

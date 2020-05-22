@@ -11,13 +11,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Gherkin.BuildingBlocks.Utils.Time;
+using Gherkin.BuildingBlocks.Tech.Time;
 
 namespace Gherkin.Testing.Factory.Base
 {
     public class TestServerBuilder<T> where T : class
     {
-
         protected List<Action<IServiceCollection>> TestServices { get; set; }
         protected List<Action<IServiceCollection>> MockDbContexts { get; set; }
         protected List<Action<IServiceCollection>> ArrangedData { get; set; }
@@ -104,28 +103,14 @@ namespace Gherkin.Testing.Factory.Base
         }
 
         public TestServerBuilder<T> AddTestService<TService>(Action<IServiceCollection> action)
-        {
-            // automatically remove existing services that are not automatically removed like typed HttpClients
+        {            
             Action<IServiceCollection> wrapper = serviceCollecton =>
-            {
-                //serviceCollecton.Remove<TService>();                
+            {                            
                 action.Invoke(serviceCollecton);
             };
             TestServices.Add(action);
             return this;
-        }
-
-        //public TestServerBuilder<T> AddHttpClient<TService>(Func<TService> service, Func<HttpMessageHandler> messageHandler, Func<IHttpClientBuilder>)
-        //{
-        //    // automatically remove existing services that are not automatically removed like typed HttpClients
-        //    Action<IServiceCollection> wrapper = serviceCollecton =>
-        //    {
-        //        serviceCollecton.Remove<TService>();
-        //        action.Invoke(serviceCollecton);
-        //    };
-        //    TestServices.Add(action);
-        //    return this;
-        //}
+        }     
 
         public virtual TestServerBuilder<T> WithDefaultHostBuilder()
         {
