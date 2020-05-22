@@ -13,25 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{C3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract", "Contract", "{8CD1CD5F-37E3-4840-B835-69B0D6C314FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Testing", "src\Testing\Gherkin.Testing.csproj", "{F0E31601-5E4C-4B99-8EF8-B97F415350A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Testing", "Testing\Gherkin.Testing.csproj", "{F0E31601-5E4C-4B99-8EF8-B97F415350A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Tech", "src\BuildingBlocks\Tech\Gherkin.BuildingBlocks.Tech.csproj", "{24B34033-4922-425B-9FEA-7FF03D4D468D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Tech", "BuildingBlocks\Tech\Gherkin.BuildingBlocks.Tech.csproj", "{24B34033-4922-425B-9FEA-7FF03D4D468D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Utils", "src\BuildingBlocks\Utils\Gherkin.BuildingBlocks.Utils.csproj", "{940009CA-ED1B-4945-8154-56CD79DDDAA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.BuildingBlocks.Utils", "BuildingBlocks\Utils\Gherkin.BuildingBlocks.Utils.csproj", "{940009CA-ED1B-4945-8154-56CD79DDDAA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Gate.OnlineStoreApi", "src\Gate\OnlineStoreAPI\Gherkin.Gate.OnlineStoreApi.csproj", "{155D288B-96DC-45C4-A96F-BAD8502DA9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Gate.OnlineStoreApi", "Gate\OnlineStoreAPI\Gherkin.Gate.OnlineStoreApi.csproj", "{155D288B-96DC-45C4-A96F-BAD8502DA9EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Core.CentralHub", "src\Core\CountryInventory\Gherkin.Core.CentralHub.csproj", "{A6E91897-D568-4379-B9E1-77269AA07260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Core.CentralHub", "Core\CountryInventory\Gherkin.Core.CentralHub.csproj", "{A6E91897-D568-4379-B9E1-77269AA07260}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Provider.Supplier", "src\Provider\Supplier\Gherkin.Provider.Supplier.csproj", "{40F3E9C6-225C-4B2C-BF14-EE91E27E9068}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Provider.Supplier", "Provider\Supplier\Gherkin.Provider.Supplier.csproj", "{40F3E9C6-225C-4B2C-BF14-EE91E27E9068}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Provider.SupplierMock", "src\Provider\SupplierMock\Gherkin.Provider.SupplierMock.csproj", "{35B4710D-0663-480C-8458-DFDA7CCECE62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Provider.SupplierMock", "Provider\SupplierMock\Gherkin.Provider.SupplierMock.csproj", "{35B4710D-0663-480C-8458-DFDA7CCECE62}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.CentralHub", "src\Contract\CentralHub\Gherkin.Contract.CentralHub.csproj", "{E3EB329F-ACBF-491A-A203-67880B2140E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.CentralHub", "Contract\CentralHub\Gherkin.Contract.CentralHub.csproj", "{E3EB329F-ACBF-491A-A203-67880B2140E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.OnlineStoreApi", "src\Contract\OnlineStoreApi\Gherkin.Contract.OnlineStoreApi.csproj", "{05B526E2-4684-449F-8BEF-C2A4952C1609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.OnlineStoreApi", "Contract\OnlineStoreApi\Gherkin.Contract.OnlineStoreApi.csproj", "{05B526E2-4684-449F-8BEF-C2A4952C1609}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.Supplier", "src\Contract\Supplier\Gherkin.Contract.Supplier.csproj", "{C07A5E38-A445-4BF2-B3E7-E10CC4FE24C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gherkin.Contract.Supplier", "Contract\Supplier\Gherkin.Contract.Supplier.csproj", "{C07A5E38-A445-4BF2-B3E7-E10CC4FE24C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
