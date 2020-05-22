@@ -7,24 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="OrderCheckingAPI\ContractTests\**" />
     <Compile Remove="Tester\**" />
-    <EmbeddedResource Remove="OrderCheckingAPI\ContractTests\**" />
     <EmbeddedResource Remove="Tester\**" />
-    <None Remove="OrderCheckingAPI\ContractTests\**" />
     <None Remove="Tester\**" />
-    <SpecFlowFeatureFiles Remove="OrderCheckingAPI\ContractTests\**" />
     <SpecFlowFeatureFiles Remove="Tester\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="OrderCheckingAPI\ContractTests\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tester\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Factory\OrderCheckingAPI\appsettings.test.json" />
+    <None Remove="Factory\OnlineShopApi\appsettings.test.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Factory\OrderCheckingAPI\appsettings.test.json">
+    <Content Include="Factory\OnlineShopApi\appsettings.test.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -61,10 +56,6 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="OrderCheckingAPI\CheckOrderOnStock.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="PhysicalStore\DeliveryTime.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
@@ -76,11 +67,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks\Tech\Gherkin.BuildingBlocks.Tech.csproj" />
     <ProjectReference Include="..\BuildingBlocks\Utils\Gherkin.BuildingBlocks.Utils.csproj" />
-    <ProjectReference Include="..\Contract\LabAPI\Gherkin.Contract.LabAPI.csproj" />
-    <ProjectReference Include="..\Contract\OrderCheckingAPI\Gherkin.Contract.OrderCheckingAPI.csproj" />
-    <ProjectReference Include="..\Core\LabAPI\Gherkin.Core.LabAPI.csproj" />
-    <ProjectReference Include="..\Core\OrderCheckingAPI\Gherkin.Core.OrderCheckingAPI.csproj" />
+    <ProjectReference Include="..\Core\CountryInventory\Gherkin.Core.CentralHub.csproj" />
+    <ProjectReference Include="..\Gate\OnlineStoreAPI\Gherkin.Gate.OnlineStoreApi.csproj" />
+    <ProjectReference Include="..\Provider\SupplierMock\Gherkin.Provider.SupplierMock.csproj" />
+    <ProjectReference Include="..\Provider\Supplier\Gherkin.Provider.Supplier.csproj" />
   </ItemGroup>
 
 </Project>

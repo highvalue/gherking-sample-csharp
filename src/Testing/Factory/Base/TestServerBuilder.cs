@@ -40,7 +40,7 @@ namespace Gherkin.Testing.Factory.Base
 
         public static TestServerBuilder<T> NewTestServer(Uri baseAddress)
         {
-            return new TestServerBuilder<T>() { BaseAddress = baseAddress };
+            return new TestServerBuilder<T>() {BaseAddress = baseAddress};
         }
 
         public virtual TestServerBuilder<T> AddDefaultTestServices()
@@ -83,21 +83,22 @@ namespace Gherkin.Testing.Factory.Base
                 }
 
                 serviceCollecton.AddDbContext<TDbContext>(options =>
-                  // add inmemory datacontext for persistence
-                  // inmemory has no transactions, so we suppress the warning/error, otherwise we would need check in repo
-                  options.UseInMemoryDatabase(databaseName: typeof(TDbContext).Name + isolationId.ToString())
-                   .ConfigureWarnings(w => w.Ignore(InMemoryEventId.TransactionIgnoredWarning))
-                   );
+                    // add inmemory datacontext for persistence
+                    // inmemory has no transactions, so we suppress the warning/error, otherwise we would need check in repo
+                    options.UseInMemoryDatabase(databaseName: typeof(TDbContext).Name + isolationId.ToString())
+                        .ConfigureWarnings(w => w.Ignore(InMemoryEventId.TransactionIgnoredWarning))
+                );
 
             };
             MockDbContexts.Add(action);
             return this;
 
         }
+
         public virtual TestServerBuilder<T> PinTimeServer(TimeData timeData)
         {
             AddTestService<ITimeServer>(services =>
-             services.AddTransient<ITimeServer>(factory => new MockTimeServer(timeData))
+                services.AddTransient<ITimeServer>(factory => new MockTimeServer(timeData))
             );
 
             return this;
@@ -134,36 +135,30 @@ namespace Gherkin.Testing.Factory.Base
                 // add jsonfile
                 if (!string.IsNullOrWhiteSpace(AppSettingsEntryPoint))
                 {
-                    builder.ConfigureAppConfiguration((context, conf) =>
-                    {
-                        conf.AddJsonFile(AppSettingsEntryPoint);
-                    });
+                    builder.ConfigureAppConfiguration((context, conf) => { conf.AddJsonFile(AppSettingsEntryPoint); });
                 }
 
                 // adx mock dbcontexts
                 if (MockDbContexts.Count > 0)
                 {
                     builder.ConfigureServices(serviceCollection =>
-                    {
-                        foreach (var mockDbContext in MockDbContexts)
                         {
-                            mockDbContext.Invoke(serviceCollection);
-                        }
+                            foreach (var mockDbContext in MockDbContexts)
+                            {
+                                mockDbContext.Invoke(serviceCollection);
+                            }
 
-                        foreach (var arrangedData in ArrangedData)
-                        {
-                            arrangedData.Invoke(serviceCollection);
+                            foreach (var arrangedData in ArrangedData)
+                            {
+                                arrangedData.Invoke(serviceCollection);
+                            }
                         }
-                    }
-                  );
+                    );
                 }
 
                 if (!string.IsNullOrWhiteSpace(AppSettingsTestProject))
                 {
-                    builder.ConfigureAppConfiguration((context, conf) =>
-                    {
-                        conf.AddJsonFile(AppSettingsTestProject);
-                    });
+                    builder.ConfigureAppConfiguration((context, conf) => { conf.AddJsonFile(AppSettingsTestProject); });
                 }
 
                 //add testservices
@@ -180,7 +175,8 @@ namespace Gherkin.Testing.Factory.Base
 
         public virtual TestServerBuilder<T> WithAppSettingsFromEntryPoint(string appSettingsPath)
         {
-            if (!string.IsNullOrWhiteSpace(AppSettingsTestProject)) throw new InvalidOperationException($"'{nameof(AppSettingsTestProject)}' is already configured");
+            if (!string.IsNullOrWhiteSpace(AppSettingsTestProject))
+                throw new InvalidOperationException($"'{nameof(AppSettingsTestProject)}' is already configured");
             AppSettingsEntryPoint = appSettingsPath;
             return this;
         }
@@ -188,14 +184,16 @@ namespace Gherkin.Testing.Factory.Base
         public virtual TestServerBuilder<T> WithAppSettingsFromAbsolutePath(string appSettingsPath)
         {
             // this works the same
-            if (!string.IsNullOrWhiteSpace(AppSettingsTestProject)) throw new InvalidOperationException($"'{nameof(AppSettingsTestProject)}' is already configured");
+            if (!string.IsNullOrWhiteSpace(AppSettingsTestProject))
+                throw new InvalidOperationException($"'{nameof(AppSettingsTestProject)}' is already configured");
             AppSettingsEntryPoint = appSettingsPath;
             return this;
         }
 
         public virtual TestServerBuilder<T> WithAppSettingsRelativeToProjectOf<TEntryPoint>(string appSettingsPath)
         {
-            if (!string.IsNullOrWhiteSpace(AppSettingsEntryPoint)) throw new InvalidOperationException($"'{nameof(AppSettingsEntryPoint)}' is already configured");
+            if (!string.IsNullOrWhiteSpace(AppSettingsEntryPoint))
+                throw new InvalidOperationException($"'{nameof(AppSettingsEntryPoint)}' is already configured");
 
             // this actually is the runtime directory i.e.
             // C:\Users\<someUser>\source\repos\CoSyMaNext\Testing\bin\Debug\netcoreapp3.0
@@ -246,6 +244,7 @@ namespace Gherkin.Testing.Factory.Base
             ArrangedData.Add(action);
             return this;
         }
+
         protected virtual void Reset()
         {
             TestServices = null;
@@ -254,5 +253,51 @@ namespace Gherkin.Testing.Factory.Base
             AppSettingsTestProject = null;
             BaseAddress = null;
         }
+
+        public virtual TestServerBuilder<T> LinkDbContext<TDbContext>(DbContextContainer container)
+            where TDbContext : DbContext
+        {
+            Action<IServiceCollection> action = serviceCollection =>
+            {
+                Action<Action<TDbContext>> GetDbContextAction = dataFactory =>
+                {
+                    var serviceProvider = serviceCollection.BuildServiceProvider();
+                    // Remove the app's ApplicationDbContext registration.
+                    using (var scope = serviceProvider.CreateScope())
+                    {
+                        var scopedServices = scope.ServiceProvider;
+                        using var dbContext = scopedServices.GetRequiredService<TDbContext>();
+                        dbContext.Database.EnsureCreated();
+
+                        dataFactory.Invoke(dbContext);
+                        dbContext.SaveChanges();
+                    }
+                };
+
+                container.GetDbContextAction = GetDbContextAction;
+
+                
+
+            };
+            ArrangedData.Add(action);
+            return this;
+        }
+    }
+
+    public class DbContextContainer
+    {
+        public Action<DbContext> GetDbContext { get; set; }
+        public Action<Action<DbContext>> GetDbContextAction { get; set; }
+        
+
+        //List<LocalStockItem>
+        //public PopulateData(Action<DbContext> dataFactory)
+        //{
+        //    DbContext.AddRange();
+        //    DbContext.SaveChanges();
+        //    //context => context.AddRange(CreateTestData())
+        //    //dataFactory.Invoke(dbContext);
+        //    //dbContext.SaveChanges();
+        //}
     }
 }

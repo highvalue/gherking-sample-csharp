@@ -1,4 +1,5 @@
-﻿Feature: DeliveryTime
+﻿@ignore
+Feature: DeliveryTime
 	Checks the delivery time for an physical store customer.
 
 Scenario:  standard delivery time - central
@@ -17,8 +18,8 @@ Scenario:  delayed delivery time
 	When items out-of-stock in central inventory
 	And supplier in late mode
 	Then items will be available by delayed delivery time
-
-Scenario:  delayed delivery time
+	
+Scenario:  critical delivery time
 	Given ordering items from central inventory
 	When items out-of-stock in central inventory
 	And supplier in refusal mode

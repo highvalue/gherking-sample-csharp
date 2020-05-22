@@ -5,6 +5,11 @@ namespace Gherkin.Testing.Utils.Extensions
 {
     public static class HttpClientHandlerExtensions
     {
+        public static HttpResponseMessage PostRequest(this HttpClient client, string requestUrl, StringContent stringContent)
+        {
+            return client.PostRequest(requestUrl, stringContent, "");
+        }
+
         public static HttpResponseMessage PostRequest(this HttpClient client, string requestUrl, StringContent stringContent, string token)
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -39,6 +44,11 @@ namespace Gherkin.Testing.Utils.Extensions
             HttpResponseMessage response = client.GetAsync(requestUrl).GetAwaiter().GetResult();
 
             return response;
+        }
+
+        public static Either<RequestResult, T> GetRequest<T>(this HttpClient client, string requestUrl, TestingSerializationOptions serializerOptions = TestingSerializationOptions.Json) where T : class
+        {
+            return client.GetRequest<T>(requestUrl, "", serializerOptions);
         }
 
         public static Either<RequestResult, T> GetRequest<T>(this HttpClient client, string requestUrl, string token, TestingSerializationOptions serializerOptions = TestingSerializationOptions.Json) where T : class

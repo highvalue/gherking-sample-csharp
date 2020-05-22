@@ -1,4 +1,5 @@
-﻿Feature: LostSales
+﻿@ignore
+Feature: LostSales
 	Checks different types of lost sales.
 
 Scenario: one lost sale

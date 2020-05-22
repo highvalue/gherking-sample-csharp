@@ -1,4 +1,5 @@
-﻿Feature: NotifyClient
+﻿@ignore
+Feature: NotifyClient
 	Notifies the client when supplier changes its mode.
 
 Scenario: supplier from just-in-time to late 

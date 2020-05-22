@@ -1,4 +1,5 @@
-﻿Feature: BasicSalesCycle
+﻿@ignore
+Feature: BasicSalesCycle
 	Checks the basic steps of the sales cycle.
 
 Scenario: lead
@@ -31,7 +32,7 @@ Scenario: in-delivery status
 	And items in-stock
 	Then we have an in-delivery status
 
-Scenario: in-delivery status
+Scenario: been-delivery status
 	Given a Customer visiting the OnlineShop
 	And items in the shopping cart
 	When payment received
